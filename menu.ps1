@@ -1,27 +1,27 @@
 do {
     Clear-Host
-    Write-Host "=== HERRAMIENTA DE ADMINISTRACION - DATA CENTER ==="
-    Write-Host "1. Usuarios del sistema y ultimo login"
-    Write-Host "2. Discos y filesystems"
-    Write-Host "3. Top 10 archivos mas grandes"
-    Write-Host "4. Memoria RAM y Swap"
-    Write-Host "5. Backup a USB"
-    Write-Host "6. Salir"
+    Write-Host "=== DATA CENTER ADMINISTRATION TOOL ==="
+    Write-Host "1. System users and last login"
+    Write-Host "2. Disks and volumes"
+    Write-Host "3. Top 10 largest files"
+    Write-Host "4. RAM and Swap memory"
+    Write-Host "5. Backup to USB"
+    Write-Host "6. Exit"
     Write-Host ""
     
-    $opcion = Read-Host "Seleccione una opcion"
+    $option = Read-Host "Select an option"
     
-    switch ($opcion) {
-        "1" { & "$PSScriptRoot\usuarios.ps1" }
-        "2" { & "$PSScriptRoot\discos.ps1" }
-        "3" { & "$PSScriptRoot\archivos.ps1" }
-        "4" { & "$PSScriptRoot\memoria.ps1" }
+    switch ($option) {
+        "1" { & "$PSScriptRoot\users.ps1" }
+        "2" { & "$PSScriptRoot\disks.ps1" }
+        "3" { & "$PSScriptRoot\files.ps1" }
+        "4" { & "$PSScriptRoot\memory.ps1" }
         "5" { & "$PSScriptRoot\backup.ps1" }
-        "6" { Write-Host "Saliendo..."; break }
-        default { Write-Host "Opcion invalida" }
+        "6" { Write-Host "Exiting..."; break }
+        default { Write-Host "Invalid option" }
     }
     
-    if ($opcion -ne "6") {
-        Read-Host "`nPresione Enter para continuar"
+    if ($option -ne "6") {
+        Read-Host "`nPress Enter to continue"
     }
-} while ($opcion -ne "6")
+} while ($option -ne "6")
