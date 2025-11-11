@@ -12,11 +12,11 @@ echo ""
 # Mostrar ejemplos de filesystems reales (máx 5)
 echo "Available filesystems (examples):"
 
-# 1️⃣ Intentar mostrar los primeros 5 filesystems reales
+# Intentar mostrar los primeros 5 filesystems reales
 df -h --output=source,target 2>/dev/null | \
 awk 'NR>1 && $1 !~ /tmpfs|loop/ {printf "• %-15s mounted on %s\n", $1, $2}' | head -5
 
-# 2️⃣ Añadir ejemplos útiles comunes
+# Añadir ejemplos útiles comunes
 echo "• /home           (user home directory)"
 echo "• /usr            (system programs and libraries)"
 echo "• /var            (logs and variable data)"
