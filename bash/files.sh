@@ -31,9 +31,6 @@ read -p "Enter the filesystem or directory path to analyze: " path
 if [[ ! -d "$path" ]]; then
     echo ""
     echo "Error: The specified path does not exist or is not a directory."
-    echo ""
-    read -p "Press ENTER to return to the menu..."
-    bash menu.sh
     exit 1
 fi
 
@@ -51,7 +48,3 @@ awk '{
     name=$2
     printf "%-12s %s\n", size, name
 }'
-
-echo ""
-read -p "Press ENTER to return to the menu..."
-bash menu.sh

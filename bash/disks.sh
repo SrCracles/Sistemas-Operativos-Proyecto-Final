@@ -33,11 +33,3 @@ df -B1 --output=source,size,avail | awk '
         printf "%-25s  Total: %-15s  Free: %-15s\n", $1, total, free
     }
 '
-
-echo ""                                 # Línea en blanco final para mejor legibilidad
-
-# Espera a que el usuario presione ENTER antes de volver al menú principal
-read -p "Press ENTER to return to the menu..."
-
-# Llama nuevamente al script principal del menú
-bash menu.sh

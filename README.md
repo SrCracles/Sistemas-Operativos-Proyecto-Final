@@ -59,11 +59,26 @@ cd ruta\al\proyecto\powershell
 ### BASH (Linux)
 
 #### Configuración Inicial
-1. Dar permisos de ejecución a los scripts:
+**1. Dar permisos de ejecución a los scripts:**
 ```bash
 cd ruta/al/proyecto/bash
 chmod +x *.sh
 ```
+
+**2. Convertir line endings (si los archivos fueron creados en Windows):**
+
+Si al ejecutar los scripts aparece un error como `$'\r': orden no encontrada`, es porque los archivos tienen saltos de línea de Windows. Para solucionarlo:
+```bash
+dos2unix *.sh
+```
+
+Si no tienes `dos2unix` instalado:
+```bash
+sudo apt-get install dos2unix
+```
+
+**¿Por qué este error?** Windows usa `\r\n` para los saltos de línea, mientras que Linux usa solo `\n`. Linux interpreta el `\r` como un carácter extraño, causando errores de sintaxis.
+
 
 #### Ejecución
 ```bash
